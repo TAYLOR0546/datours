@@ -15,6 +15,7 @@ const userRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
 const viewRouter = require('./routes/viewRoutes');
+const compression = require('compression');
 // const {checkBody} = require('./controllers/tourController');
 
 // Initializing app with express
@@ -71,6 +72,8 @@ app.use(
     ],
   })
 );
+
+app.use(compression());
 
 // Serving static files
 // app.use(express.static(`${__dirname}/public`));
