@@ -84,11 +84,11 @@ app.use(compression());
 // });
 
 // Test middleware
-// app.use((req, res, next) => {
-//   req.requestTime = new Date().toISOString();
+app.use((req, res, next) => {
+  req.requestTime = new Date().toISOString();
   
-//   next();
-// });
+  next();
+});
 
 // app.get('/api/v1/tours', getAllTours);
 // app.post('/api/v1/tours', createTour);
