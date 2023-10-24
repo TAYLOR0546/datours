@@ -28,18 +28,18 @@ mongoose
     // console.log(err);
   });
 
-// const tours = JSON.parse(fs.readFileSync(`${__dirname}/tours.json`, 'utf-8'));
+const tours = JSON.parse(fs.readFileSync(`${__dirname}/tours.json`, 'utf-8'));
 // const reviews = JSON.parse(fs.readFileSync(`${__dirname}/reviews.json`, 'utf-8'));
-const users = JSON.parse(fs.readFileSync(`${__dirname}/users.json`, 'utf-8'));
+// const users = JSON.parse(fs.readFileSync(`${__dirname}/users.json`, 'utf-8'));
 
 // console.log(process.argv);
 const decAct = process.argv[2];
 
 const importDocs = async () => {
   try {
-    // await Tour.create(tours, {validateBeforeSave: false});
+    await Tour.create(tours, {validateBeforeSave: false});
     // await Review.create(reviews, {validateBeforeSave: false});
-    await User.create(users, { validateBeforeSave: false });
+    // await User.create(users, { validateBeforeSave: false });
     console.log('Import successful');
   } catch (err) {
     console.log(err);
@@ -51,8 +51,8 @@ const importDocs = async () => {
 const deleteDocs = async () => {
   try {
     await Tour.deleteMany();
-    await Review.deleteMany();
-    await User.deleteMany();
+    // await Review.deleteMany();
+    // await User.deleteMany();
     console.log('Deletion successful');
   } catch (err) {
     console.log(err);
