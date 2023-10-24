@@ -16,6 +16,7 @@ const reviewRouter = require('./routes/reviewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
 const viewRouter = require('./routes/viewRoutes');
 const compression = require('compression');
+const cors = require('cors');
 // const {checkBody} = require('./controllers/tourController');
 
 // Initializing app with express
@@ -27,6 +28,16 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
 // GLOBAL MIDDLEWARES
+// Implement CORS
+app.use(cors());
+// Access-Control-Allow-Origin *
+// api.natours.com, front-end natours.com
+// app.use(cors({
+//   origin: 'https://www.natours.com'
+// }));
+
+app.options('*', cors());
+app.options('/api/v1/tours/:id', cors());
 
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
@@ -101,6 +112,8 @@ app.use((req, res, next) => {
 // ROUTES
 
 app.use('/', viewRouter);
+// Allow CORS for a particular route
+// app.use('/api/v1/tours', cors(), tourRouter);
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
