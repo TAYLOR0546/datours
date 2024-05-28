@@ -30,7 +30,7 @@ html {
 body {
   line-height: 1.6;
   font-weight: 300;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   color: #777;
   padding: 3rem;
   min-height: 100vh;
@@ -552,7 +552,7 @@ body {
 }
 
 .marker {
-  background-image: url('../img/pin.png');
+  background-image: url("../img/pin.png");
   background-size: cover;
   width: 32px;
   height: 40px;
@@ -565,7 +565,7 @@ body {
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   padding: 1.5rem !important;
   font-size: 1.4rem;
   -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15) !important;
@@ -629,7 +629,7 @@ body {
 }
 .reviews:before,
 .reviews:after {
-  content: '';
+  content: "";
   width: 2rem;
 }
 .reviews__avatar {
@@ -1322,4 +1322,188 @@ body {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
+}
+
+/* 1001px */
+@media (max-width: 63em) {
+  .header {
+    background-color: #444;
+    padding: 0 5rem;
+    height: 8rem;
+    position: relative;
+    z-index: 100;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .nav--user {
+    position: absolute;
+    right: 1rem;
+    top: 25%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 40%;
+    flex: 0 1 40%;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
+
+  .card-container {
+    /* max-width: 120rem; */
+    max-width: 100.1rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 7rem;
+  }
+}
+
+/* 765px */
+@media (max-width: 47em) {
+  .nav--tours {
+    position: absolute;
+    left: 1rem;
+    top: 60%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 40%;
+    flex: 0 1 40%;
+  }
+
+  .header__logo {
+    position: absolute;
+    left: 1rem;
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+    margin-bottom: 1.5rem;
+  }
+
+  .nav--user {
+    position: absolute;
+    right: 1rem;
+    top: 25%;
+    display: flex;
+    flex-direction: row;
+    /* display:inline-block; */
+    /* align-items: center; */
+    /* -webkit-box-flex: 0;
+    -ms-flex: 0 1 40%;
+    flex: 0 1 40%;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end; */
+  }
+
+  .nav__el--logout {
+    margin-top: 1rem;
+  }
+
+  .card-container {
+    max-width: 77rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 7rem;
+  }
+}
+
+/* 900px */
+@media (max-width: 56em) {
+  .user-view {
+    /* max-width: 120rem; */
+    max-width: 90rem;
+    background-color: #fff;
+    margin: 0 auto;
+    min-height: 100vh;
+    border-radius: 3px;
+    overflow: hidden;
+    -webkit-box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.07);
+    box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.07);
+    display: grid;
+    /* display: -webkit-box;
+    display: -ms-flexbox; */
+    /* display: flex; */
+  }
+
+  .user-view__menu {
+    /* -webkit-box-flex: 32rem;
+    -ms-flex: 32rem 0 0px;
+    flex: 32rem 0 0; */
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right bottom,
+      from(#7dd56f),
+      to(#28b487)
+    );
+    background-image: linear-gradient(to right bottom, #7dd56f, #28b487);
+    padding: 2rem 0;
+  }
+
+  .side-nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+  }
+
+  .side-nav li {
+    /* margin: 1rem 0; */
+    border-left: 0 solid #fff;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+  .side-nav a:link,
+  .side-nav a:visited {
+    /* padding: 1rem 4rem; */
+    padding: 1rem 1rem;
+    
+  }
+
+  .user-view__content {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 7rem 0;
+  }
+
+  .user-view__form-container {
+    max-width: 68rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    /* padding: 0 8rem; */
+  }
+
+  .form__input {
+    width: 60%;
+  }
+}
+
+/* 698px */
+@media (max-width: 43em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+/* 628px */
+@media (max-width: 39.3em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+/* 628px */
+@media (max-width: 35em) {
+  html {
+    font-size: 43.75%;
+  }
 }
